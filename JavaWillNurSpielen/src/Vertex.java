@@ -75,4 +75,6 @@ public class Vertex {
 		x=x/factor;
 		y=y/factor;
 	}
+	
+
 }

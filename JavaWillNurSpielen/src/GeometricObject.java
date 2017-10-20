@@ -38,4 +38,8 @@ public GeometricObject(){this(10);}
 
 public GeometricObject(Vertex pos){this(pos,0,0);}
 
+public String toString() {
+	return "width="+width+",height="+height+", pos="+pos+"";
+}
+
 }
