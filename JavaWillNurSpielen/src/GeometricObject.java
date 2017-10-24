@@ -42,4 +42,33 @@ public String toString() {
 	return "width="+width+",height="+height+", pos="+pos+"";
 }
 
+public double circumference() {return 2*(width+height);}
+
+public double area() {return width*height;}
+
+public boolean contains(Vertex v) {
+	return (v.x >= pos.x && v.x <= pos.x + width) &&	//if true x is within
+			(v.y >= pos.y && v.y <= pos.y + height);	//if true y is within
+}														//if both true object is within
+
+public boolean isLargerThan(GeometricObject that) {
+	return this.area() > that.area();
+}
+
+public void moveTo(Vertex v) {this.pos=v;}
+
+public void moveTo(double x, double y) {
+	moveTo(new Vertex(x,y));
+}
+
+public boolean equals(Object thatObject){
+	if(thatObject instanceof GeometricObject) {
+		GeometricObject that = (GeometricObject) thatObject;
+		return this.width==that.width
+			&& this.height==that.height
+			&& this.pos.equals(that.pos);
+	}
+	return false;
+}
+
 }
